@@ -1,8 +1,19 @@
-define( ["qlik", "text!./template.html"],
-	function ( qlik, template ) {
+define( [
+	"qlik", 
+	"text!./template.html",
+	"./initial-properties",
+	"./properties",
+	"text!./style.css"
+], function ( qlik, template, initProps, props, css ) {
+	"use strict";
+	$("<style>").html(css).appendTo("head");
+
+	var app = qlik.currApp();
 
 		return {
 			template: template,
+			initialProperties: initProps,
+        	definition: props,
 			support: {
 				snapshot: true,
 				export: true,
@@ -12,10 +23,20 @@ define( ["qlik", "text!./template.html"],
 				return qlik.Promise.resolve();
 			},
 			controller: ['$scope', function ( $scope ) {
-				//add your rendering code here
-				$scope.html = "Hello World";
+
+				$scope.GoUrl = function () {
+					
+					if($scope.layout.props.action == 1){
+						console.log("Field: ", $scope.layout.props.fieldClear )
+						app.field($scope.layout.props.fieldClear).clear();
+						qlik.navigation.gotoSheet($scope.layout.props.selectedSheet);
+					}else{
+						qlik.navigation.gotoSheet($scope.layout.props.selectedSheet);
+					}
+					
+				};
+
 			}]
 		};
 
 	} );
-

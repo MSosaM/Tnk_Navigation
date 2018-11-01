@@ -1,0 +1,13 @@
+
+.qv-object-Tnk_Navigation .btn{
+    width: 100%;
+    color: #f6f6f7;
+    background-color: #003366;
+    border-color: #003366;
+}
+
+.qv-object-Tnk_Navigation .btn:hover{
+  color: #f6f6f7;
+  background-color: #002347;
+  border-color: #002347;
+}
