@@ -35,6 +35,12 @@ define([
                         type: "items",
                         label: "Navigation behavior",
                         items: {
+                            buttontext: {
+                                type: "string",
+                                label: "Button text",
+                                ref: "props.buttonText",
+                                expression: "optional"
+                            },
                             selectedSheet: {
                                 type: "string",
                                 component: "dropdown",
@@ -45,6 +51,25 @@ define([
                                         return items;
                                     });
                                 }
+                            },
+                            icon: {
+                                type: "string",
+                                component: "dropdown",
+                                label: "Button icon",
+                                ref: "props.icon",
+                                options: [{
+                                    value: "none",
+                                    label: "None"
+                                },{
+                                    value: "left.png",
+                                    label: "Left arrow"
+                                },{
+                                    value: "right.png",
+                                    label: "Right arrow"
+                                },{
+                                    value: "double-down.png",
+                                    label: "Angle double down"
+                                }]
                             }
                         }
                     },

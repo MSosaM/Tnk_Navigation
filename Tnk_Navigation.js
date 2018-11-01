@@ -36,6 +36,10 @@ define( [
 					
 				};
 
+				$scope.tIcon = $scope.layout.props.icon === "none" ? false : true;
+
+				console.log("tIcon: ", $scope.tIcon);
+
 			}]
 		};
 
