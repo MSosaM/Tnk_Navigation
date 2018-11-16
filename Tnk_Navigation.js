@@ -27,7 +27,6 @@ define( [
 				$scope.GoUrl = function () {
 					
 					if($scope.layout.props.action == 1){
-						console.log("Field: ", $scope.layout.props.fieldClear )
 						app.field($scope.layout.props.fieldClear).clear();
 						qlik.navigation.gotoSheet($scope.layout.props.selectedSheet);
 					}else{
@@ -37,8 +36,6 @@ define( [
 				};
 
 				$scope.tIcon = $scope.layout.props.icon === "none" ? false : true;
-
-				console.log("tIcon: ", $scope.tIcon);
 
 			}]
 		};
