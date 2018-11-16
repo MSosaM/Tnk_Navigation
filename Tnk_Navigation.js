@@ -15,7 +15,7 @@ define( [
 			initialProperties: initProps,
         	definition: props,
 			support: {
-				snapshot: true,
+				snapshot: false,
 				export: true,
 				exportData: false
 			},
